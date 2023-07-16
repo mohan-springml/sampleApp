@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day Identifier</title>
+</head>
+<body>
+    <h1>Day Identifier</h1>
+    <p>Today is <span id="dayIdentifier"></span>.</p>
+
+    <script>
+        // Make a request to the server to fetch the day identifier
+        fetch('/api/day')
+            .then(response => response.text())
+            .then(dayIdentifier => {
+                document.getElementById('dayIdentifier').textContent = dayIdentifier;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>
